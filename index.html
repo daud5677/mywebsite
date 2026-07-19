@@ -3,55 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - My Portfolio</title>
+    <title>Daud - Premium Web Developer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">MyPortfolio</div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <button id="darkModeBtn" onclick="toggleDarkMode()">🌙</button>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader-text">
+            <span>D</span><span>A</span><span>U</span><span>D</span>
+        </div>
+        <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo" data-aos="fade-right">D<span>.</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active"><span>01.</span> Home</a></li>
+                <li><a href="#about"><span>02.</span> About</a></li>
+                <li><a href="#services"><span>03.</span> Services</a></li>
+                <li><a href="#skills"><span>04.</span> Skills</a></li>
+                <li><a href="#projects"><span>05.</span> Work</a></li>
+                <li><a href="#contact"><span>06.</span> Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button id="darkModeBtn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <div class="hero">
-        <div class="hero-content">
-            <img src="https://i.pravatar.cc/200" alt="Profile" class="profile-pic">
-            <h1>Assalam o Alaikum 👋</h1>
-            <p class="typing">Main ek Web Developer hoon</p>
-            <a href="about.html" class="btn">Learn More</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
         </div>
-    </div>
-
-    <section class="services">
-        <h2>What I Do</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="icon">💻</div>
-                <h3>Web Design</h3>
-                <p>Beautiful and modern website designs</p>
+        <div class="hero-container">
+            <div class="hero-text">
+                <p class="hero-greeting" data-aos="fade-up"><span class="line"></span> Hello, I'm</p>
+                <h1 data-aos="fade-up" data-aos-delay="200">
+                    <span class="reveal">Daud</span>
+                    <span class="reveal">Shabbir</span>
+                </h1>
+                <h2 data-aos="fade-up" data-aos-delay="400">I'm a <span class="typing" id="typing"></span></h2>
+                <p class="hero-desc" data-aos="fade-up" data-aos-delay="600">Crafting digital experiences that inspire, engage, and convert. Let's build something amazing together. ✨</p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+                    <a href="#contact" class="btn btn-primary"><span>Hire Me</span><i class="fas fa-arrow-right"></i></a>
+                    <a href="#projects" class="btn btn-outline"><span>My Work</span></a>
+                </div>
+                <div class="social-icons" data-aos="fade-up" data-aos-delay="1000">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
-            <div class="card">
-                <div class="icon">📱</div>
-                <h3>Mobile Apps</h3>
-                <p>Responsive apps for all devices</p>
+            <div class="hero-image" data-aos="zoom-in" data-aos-delay="500">
+                <div class="image-wrapper tilt">
+                    <div class="image-glow"></div>
+                    <img src="https://i.pravatar.cc/500" alt="Daud">
+                    <div class="floating-badge badge-1"><i class="fab fa-html5"></i></div>
+                    <div class="floating-badge badge-2"><i class="fab fa-css3-alt"></i></div>
+                    <div class="floating-badge badge-3"><i class="fab fa-js"></i></div>
+                    <div class="floating-badge badge-4"><i class="fab fa-react"></i></div>
+                </div>
             </div>
-            <div class="card">
-                <div class="icon">🚀</div>
-                <h3>SEO</h3>
-                <p>Rank higher on Google search</p>
+        </div>
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>✦ Web Development ✦ UI/UX Design ✦ Mobile Apps ✦ SEO ✦ Branding ✦ Freelance ✦</span>
+                <span>✦ Web Development ✦ UI/UX Design ✦ Mobile Apps ✦ SEO ✦ Branding ✦ Freelance ✦</span>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="subtitle"><span class="line"></span> Get To Know <span class="line"></span></p>
+                <h2 class="glitch" data-text="About Me">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="about-img-wrap">
+                        <img src="https://i.pravatar.cc/500?img=12" alt="About">
+                        <div class="experience-badge">
+                            <h3>2+</h3>
+                            <p>Years of<br>Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <h3>Passionate Developer & Creative Designer 🚀</h3>
+                    <p>Assalam o Alaikum! Main Daud hoon, ek passionate web developer Pakistan se. Mujhe modern aur responsive websites banana bahut pasand hai. Har project me innovation aur creativity laata hoon.</p>
+                    <div class="stats">
+                        <div class="stat-box" data-aos="zoom-in" data-aos-delay="200">
+                            <h3 class="counter" data-target="50">0</h3>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-box" data-aos="zoom-in" data-aos-delay="400">
+                            <h3 class="counter" data-target="30">0</h3>
+                            <p>Clients</p>
+                        </div>
+                        <div class="stat-box" data-aos="zoom-in" data-aos-delay="600">
+                            <h3 class="counter" data-target="100">0</h3>
+                            <p>Success %</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary"><span>Let's Talk</span><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="subtitle"><span class="line"></span> What I Offer <span class="line"></span></p>
+                <h2>My Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-number">01</div>
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Modern, fast, and responsive websites with cutting-edge technologies.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-number">02</div>
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful interfaces that engage users and drive conversions.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-number">03</div>
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Apps</h3>
+                    <p>Cross-platform mobile apps that work perfectly on all devices.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-number">04</div>
+                    <div class="service-icon"><i class="fas fa-search"></i></div>
+                    <h3>SEO Expert</h3>
+                    <p>Rank higher on Google and attract more organic traffic.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-number">05</div>
+                    <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Performance</h3>
+                    <p>Lightning-fast websites that load in seconds for better UX.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-number">06</div>
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock support and maintenance for peace of mind.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="subtitle"><span class="line"></span> My Expertise <span class="line"></span></p>
+                <h2>My Skills</h2>
+            </div>
+            <div class="skills-wrapper">
+                <div class="skills-container" data-aos="fade-right">
+                    <div class="skill-item">
+                        <div class="skill-info"><span><i class="fab fa-html5"></i> HTML5</span><span>95%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span><i class="fab fa-css3-alt"></i> CSS3</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span><i class="fab fa-js"></i> JavaScript</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span><i class="fab fa-react"></i> React</span><span>75%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                    </div>
+                </div>
+                <div class="tech-orbit" data-aos="zoom-in">
+                    <div class="orbit-center"><i class="fas fa-code"></i></div>
+                    <div class="orbit orbit-1">
+                        <div class="orbit-item"><i class="fab fa-html5"></i></div>
+                        <div class="orbit-item"><i class="fab fa-css3-alt"></i></div>
+                        <div class="orbit-item"><i class="fab fa-js"></i></div>
+                        <div class="orbit-item"><i class="fab fa-react"></i></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="orbit-item"><i class="fab fa-node-js"></i></div>
+                        <div class="orbit-item"><i class="fab fa-github"></i></div>
+                        <div class="orbit-item"><i class="fab fa-figma"></i></div>
+                        <div class="orbit-item"><i class="fab fa-sass"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="subtitle"><span class="line"></span> My Work <span class="line"></span></p>
+                <h2>Recent Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <img src="https://picsum.photos/500/400?random=1" alt="Project">
+                    <div class="project-overlay">
+                        <p class="project-tag">Web Design</p>
+                        <h3>E-commerce Store</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+                    <img src="https://picsum.photos/500/400?random=2" alt="Project">
+                    <div class="project-overlay">
+                        <p class="project-tag">UI/UX</p>
+                        <h3>Portfolio Design</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="300">
+                    <img src="https://picsum.photos/500/400?random=3" alt="Project">
+                    <div class="project-overlay">
+                        <p class="project-tag">Business</p>
+                        <h3>Corporate Site</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="400">
+                    <img src="https://picsum.photos/500/400?random=4" alt="Project">
+                    <div class="project-overlay">
+                        <p class="project-tag">Restaurant</p>
+                        <h3>Food Website</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="500">
+                    <img src="https://picsum.photos/500/400?random=5" alt="Project">
+                    <div class="project-overlay">
+                        <p class="project-tag">Blog</p>
+                        <h3>News Platform</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="600">
+                    <img src="https://picsum.photos/500/400?random=6" alt="Project">
+                    <div class="project-overlay">
+                        <p class="project-tag">Landing</p>
+                        <h3>Product Launch</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="subtitle"><span class="line"></span> Client Reviews <span class="line"></span></p>
+                <h2>Testimonials</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Daud ne meri website bahut zabardast banai! Bilkul professional aur time par deliver ki. Highly recommended!"</p>
+                    <div class="client">
+                        <img src="https://i.pravatar.cc/100?img=5" alt="Client">
+                        <div><h4>Ahmed Khan</h4><p>CEO, TechStart</p></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Amazing work! Fast, beautiful, aur mobile par bhi perfect chalti hai. Best experience ever!"</p>
+                    <div class="client">
+                        <img src="https://i.pravatar.cc/100?img=10" alt="Client">
+                        <div><h4>Sara Ali</h4><p>Founder, Fashion Hub</p></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Best web developer maine kabhi kaam karaya. 100% satisfied! Will hire again for future projects."</p>
+                    <div class="client">
+                        <img src="https://i.pravatar.cc/100?img=15" alt="Client">
+                        <div><h4>Bilal Hassan</h4><p>Owner, Food Cafe</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="subtitle"><span class="line"></span> Get In Touch <span class="line"></span></p>
+                <h2>Let's Work Together</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div><h4>Email</h4><p>daud@example.com</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div><h4>Phone</h4><p>+92 300 1234567</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><h4>Location</h4><p>Pakistan</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div><h4>WhatsApp</h4><p>+92 300 1234567</p></div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="sendMessage(event)" data-aos="fade-left">
+                    <div class="form-row">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary"><span>Send Message</span><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2025 My Website. All rights reserved. ❤️</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Daud<span>.</span></div>
+                <p class="footer-tagline">Creating digital experiences that inspire.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="copyright">© 2025 Daud Ahmed. Made with ❤️ in Pakistan</p>
+            </div>
+        </div>
     </footer>
 
+    <a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
